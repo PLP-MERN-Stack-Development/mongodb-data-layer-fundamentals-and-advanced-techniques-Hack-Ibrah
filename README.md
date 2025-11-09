@@ -1,59 +1,70 @@
-# MongoDB Fundamentals - Week 1
+# 📚 MongoDB Week 1 Assignment – PLP Bookstore
 
-## Setup Instructions
+This project demonstrates MongoDB fundamentals including setup, data insertion, CRUD operations, advanced queries, aggregation pipelines, and indexing. It is part of the PLP Software Development curriculum.
+## 🛠️ Setup Instructions
 
-Before you begin this assignment, please make sure you have the following installed:
+### Requirements
+- MongoDB Community Edition installed locally
+- Node.js installed
+- MongoDB Compass (optional for GUI testing)
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+### How to Start MongoDB
+1. Create the data directory manually:
+2. Start the MongoDB server:
+3. Open MongoDB Compass and connect to:
+4. Select the `plp_bookstore` database and open the `books` collection.
 
-### Node.js Package Setup
+## 📂 Project Files
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+| File Name         | Description |
+|------------------|-------------|
+| `insert_books.js` | Inserts 12 sample books into the `books` collection |
+| `crud.js`         | Demonstrates basic CRUD operations |
+| `queries.js`      | Contains all MongoDB queries for Tasks 2–5 |
+| `README.md`       | This guide |
+| `screenshot.png`  | Screenshot of MongoDB Compass showing sample data |
 
+## 🚀 How to Run Scripts
+
+1. Open a terminal window
+2. Navigate to your project folder:
 ```bash
-# Initialize a package.json file
-npm init -y
+cd path/to/your/project
+node insert_books.js
+node crud.js
+🧪 How to Test Queries
+Option 1: MongoDB Compass
+Open the Filter tab to run queries like:
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+js
+{ genre: "Fantasy" }
+{ published_year: { $gt: 2000 } }
+Use the Aggregation tab to run pipelines like:
 
-## Assignment Overview
+js
+[
+  { $group: { _id: "$genre", avgPrice: { $avg: "$price" } } }
+]
+Option 2: MongoDB Shell (if installed)
+bash
+mongosh
+use plp_bookstore
+Then paste queries from queries.js one at a time.
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+✅ Submission Checklist
+[x] insert_books.js created and tested
 
-## Submission
+[x] crud.js created and tested
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+[x] queries.js with all required queries
 
-## Getting Started
+[x] Screenshot of MongoDB Compass
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+[x] All files committed and pushed to GitHub
 
-## Files Included
+👨🏽‍🏫 Author
+Ibrahim PLP Software Development Student MongoDB Explorer | Youth Curriculum Designer | Creative Educator
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+Code
 
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+---
